@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style type="text/css">
+    #content {
+        background-color: yellow;
+        width: 600px;
+        height: 90px;
+        padding: 3px;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#animate").click(function(){
+            $("#content").animate({"height": "500px", "width": "750px"}, "slow");
+        });
+    });
+</script>
+<body>
+    <input type="button" id="animate" value="Animate"/>
+    <div id="content">Animate Height</div>
+</body>
+</html>
