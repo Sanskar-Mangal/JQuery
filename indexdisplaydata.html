@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style type="text/css">
+    body{
+        background-color: aquamarine;
+    }
+   #design{
+    border: 3px solid red;
+    width: 300px;
+    height: 150px;
+    margin-left: 510px;
+    margin-top: 50px;
+    background-color: bisque;
+   }
+
+   button{
+    width: 60px;
+    height: 30px;
+   }
+   #tgtdiv{
+    border: 3px solid red;
+    width: 300px;
+    height: 150px;
+    margin-left: 510px;
+    margin-top: 50px;
+    color: black;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 30pt;
+    background-color: lightyellow;
+   }
+    
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#myform').submit(function (event){
+            event.preventDefault();
+            var fname = $('#txtfirstname').val();
+            var lname = $('#txtlastname').val();
+            $('#tgtdiv').html("<b>" +fname+ " "+lname+"</b>");
+        });
+
+        $('#resetbutton').click(function(){
+            $('#myForm')[0].reset();
+            $('#tgtdiv').empty(); 
+        });
+        $('#resetbutton').click(function(){
+            $('#tgtdiv')[0].reset();
+             $('#tgtdiv').empty(); 
+        });
+
+
+    });
+
+
+  
+</script>
+<body>
+   <div id="design">
+    <form id="myform">
+    <br>
+    <label style="padding-left: 20px;">First Name:&nbsp; <input type="text" id="txtfirstname"></label>
+    <br> <br>
+    <label style="padding-left: 20px;">Last Name:&nbsp; <input type="text" id="txtlastname"></label>
+    <br> <br>
+    <label style="padding-left: 110px;">&nbsp; <button type="submit" id="submitbutton">Submit</button> </label>
+    <label style="padding-left: 10px;">&nbsp; <button type="reset" id="resetbutton">Reset</button></label>
+</form>
+    
+   </div>
+   <div id="tgtdiv"></div>
+</body>
+</html>
